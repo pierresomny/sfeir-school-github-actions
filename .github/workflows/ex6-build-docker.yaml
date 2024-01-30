@@ -9,8 +9,8 @@ jobs:
   run-npm-install:
     strategy:
       matrix:
-        version: [14, lts/*]
-        os: [ubuntu-latest, ubuntu-18.04]
+        version: [ 14, lts/* ]
+        os: [ ubuntu-latest, ubuntu-18.04 ]
         include:
           - os: ubuntu-latest
             version: 12
@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name : setup node
+      - name: setup node
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.version }}
@@ -37,8 +37,8 @@ jobs:
     needs: run-npm-install
     strategy:
       matrix:
-        version: [14, lts/*]
-        os: [ubuntu-latest, ubuntu-18.04]
+        version: [ 14, lts/* ]
+        os: [ ubuntu-latest, ubuntu-18.04 ]
         include:
           - os: ubuntu-latest
             version: 12
@@ -47,7 +47,7 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name : setup node
+      - name: setup node
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.version }}
