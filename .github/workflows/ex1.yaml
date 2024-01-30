@@ -12,12 +12,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
-      - name: run npm install
-        run: npm install
-  job2:
-    needs:
-      - job1
-    runs-on: ubuntu-latest
-    steps:
-      - name: run test
-        run: npm test
+      - name: run npm install test
+        run: |
+          npm install
+          npm test
