@@ -17,7 +17,7 @@ jobs:
           path: ~/.npm
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-      - name : setup node
+      - name: setup node
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
@@ -32,7 +32,16 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name : setup node
+      - name: Cache node modules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+      - name: setup node
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
