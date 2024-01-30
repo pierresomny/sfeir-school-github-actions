@@ -1,0 +1,11 @@
+name: reusable workflow
+on:
+  workflow_dispatch:
+
+jobs:
+  test-reusable-workflow-with-input:
+    uses: pierresomny/sfeir-github-reusable-workflows/.github/workflows/test.yaml@main
+    with:
+      node-version: '14'
+  test-reusable-workflow:
+    uses: pierresomny/sfeir-github-reusable-workflows/.github/workflows/test.yaml@main
