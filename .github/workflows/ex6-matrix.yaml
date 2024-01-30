@@ -5,6 +5,7 @@ on:
 jobs:
   run-npm-install:
     strategy:
+      max-parallel: 2
       matrix:
         os: [ ubuntu-18.04, ubuntu-latest ]
         node: [ 12, 14, lts/* ]
