@@ -10,4 +10,4 @@ jobs:
   test-reusable-workflow:
     uses: pierresomny/sfeir-github-reusable-workflows/.github/workflows/test.yaml@main
   test-reusable-workflow-intern:
-    uses: ./.github/workflows/test.yaml@main
+    uses: ./.github/workflows/test.yaml
