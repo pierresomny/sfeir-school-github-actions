@@ -9,3 +9,7 @@ jobs:
       node-version: '14'
   test-reusable-workflow:
     uses: pierresomny/sfeir-github-reusable-workflows/.github/workflows/test.yaml@main
+  test-reusable-workflow-without-at-main:
+    uses: pierresomny/sfeir-github-reusable-workflows/.github/workflows/test.yaml
+  test-reusable-workflow-intern:
+    uses: ./.github/workflows/test.yaml@main
